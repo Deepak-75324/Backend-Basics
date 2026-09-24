@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+</head>
+
+<body>
+
+    <h1>Edit User</h1>
+
+    <form action="/api/users/<%= user._id %>?_method=PUT" method="POST">
+
+        <div>
+            <label for="name">Name</label>
+            <input 
+                type="text"
+                name="name"
+                id="name"
+                value="<%= user.name %>"
+                required
+            />
+        </div>
+
+        <br>
+
+        <div>
+            <label for="email">Email</label>
+            <input 
+                type="email"
+                name="email"
+                id="email"
+                value="<%= user.email %>"
+                required
+            />
+        </div>
+
+        <br>
+
+        <div>
+            <label for="contact">Contact</label>
+            <input 
+                type="number"
+                name="contact"
+                id="contact"
+                value="<%= user.contact %>"
+                required
+            />
+        </div>
+
+        <br>
+        <div>
+            <label for="address">Address</label>
+            <input 
+                type="text"
+                name="address"
+                id="address"
+                value="<%= user.address %>"
+                required
+            />
+        </div>
+        <br>
+
+        <button type="submit">Update User</button>
+
+    </form>
+
+    <br>
+
+    <a href="/api/users">Back to all Users</a>
+
+</body>
+</html>

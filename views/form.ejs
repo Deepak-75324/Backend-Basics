@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New User</title>
+</head>
+<body>
+    <h1>Add New User</h1>
+    <form action="/api/users" method="POST">
+        <div>
+            <label for="name">Name
+                <input
+                   type="text"
+                   id="name"
+                   name="name"
+                   required
+                />
+            </label>
+        </div>
+        <br>
+
+        <div>
+           <label for="email">Email
+            <input
+                type="text"
+                id="email"
+                name="email"
+                required 
+            />
+           </label> 
+        </div>
+        <br>
+
+        <div>
+            <label for="contact">Contact No:
+                <input
+                    type="number"
+                    id="contact"
+                    name="contact"
+                    required 
+                />
+            </label>
+        </div>
+        <br>
+
+        <div>
+            <label for="address">Address:
+                <input
+                    type="text"
+                    id="address"
+                    name="address"
+                    required 
+                />
+            </label>
+        </div>
+
+        <br>
+        <button type="submit">Create New User</button>
+    
+    </form>
+    <a href="/api/users">View all Users</a>
+</body>
+</html>

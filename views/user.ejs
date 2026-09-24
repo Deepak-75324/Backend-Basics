@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+</head>
+
+<body>
+
+    <h1>All Users</h1> 
+    <a href="/api/users/new">Add New User</a>
+    <% if(!currentUser) { %>
+        <a href="/api/register">Sign Up</a>
+        <a href="/api/login">Login</a>
+    <% } %>
+    <br>
+    <% if(currentUser) { %>
+        <h2>Welcome, <%= currentUser.username %></h2>
+        <p>User ID: <%= currentUser.userId %></p>
+        <br>
+        <a href="/api/logout">LogOut</a>
+    <% } %>
+    
+
+    <% users.forEach(user => { %>
+
+        <div>
+            <h2>Name: <%= user.name %></h2>
+            <p>Email: <%= user.email %></p>
+            <p>Contact No: <%= user.contact %></p>
+            <p>Address: <%= user.address %></p>
+            
+            <a href="/api/users/<%= user._id %>/edit">Edit</a>
+            <form action="/api/users/<%= user._id %>?_method=DELETE" method="POST" style="display:inline;">
+                <button type="submit">DELETE</button>
+            </form>
+        </div>
+
+        <hr>
+
+    <% }); %>
+
+</body>
+</html>
